@@ -89,5 +89,11 @@ namespace GitLabApiClient.Models.MergeRequests.Responses
 
         [JsonProperty("pipeline")]
         public Pipeline Pipeline { get; set; }
+
+        [JsonProperty("rebase_in_progress")]
+        public bool RebaseInProgress { get; set; }
+
+        [JsonProperty("merge_error")]
+        public string Error { get; set; }
     }
 }
