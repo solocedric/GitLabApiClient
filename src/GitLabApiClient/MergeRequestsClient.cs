@@ -183,7 +183,7 @@ namespace GitLabApiClient
         /// <param name="request">Accept and Rebase Merge Request note request.</param>
         public async Task AcceptAndRebaseAsync(ProjectId projectId, int mergeRequestId, AcceptMergeRequest request)
         {
-            await _httpFacade.Post($"projects/{projectId}/merge_requests/{mergeRequestId}/rebase", request);
+            await _httpFacade.Put($"projects/{projectId}/merge_requests/{mergeRequestId}/rebase", request);
         }
 
     }
