@@ -31,5 +31,11 @@ namespace GitLabApiClient.Models.MergeRequests.Requests
         /// </summary>
         [JsonProperty("sha")]
         public string Sha { get; set; }
+
+        /// <summary>
+        /// skip_ci or not
+        /// </summary>
+        [JsonProperty("skip_ci")]
+        public bool SkipCi { get; set; }
     }
 }

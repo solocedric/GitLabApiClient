@@ -107,7 +107,7 @@ namespace GitLabApiClient
         /// Accepts merge request.
         /// </summary>
         /// <returns>The accepted merge request.</returns>
-        /// /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
         /// <param name="mergeRequestId">The Internal Merge Request Id.</param>
         /// <param name="request">Accept Merge request.</param>
         public async Task<MergeRequest> AcceptAsync(ProjectId projectId, int mergeRequestId, AcceptMergeRequest request)
@@ -174,6 +174,17 @@ namespace GitLabApiClient
         /// <param name="mergeRequestIid">The Internal Merge Request Id.</param>
         public async Task<IList<AwardEmoji>> GetAwardEmojisAsync(ProjectId projectId, int mergeRequestIid) =>
             await _httpFacade.GetPagedList<AwardEmoji>($"projects/{projectId}/merge_requests/{mergeRequestIid}/award_emoji");
+
+        /// <summary>
+        /// Rebase.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <param name="mergeRequestId">The Internal Merge Request Id.</param>
+        /// <param name="request">Accept and Rebase Merge Request note request.</param>
+        public async Task AcceptAndRebaseAsync(ProjectId projectId, int mergeRequestId, AcceptMergeRequest request)
+        {
+            await _httpFacade.Post($"projects/{projectId}/merge_requests/{mergeRequestId}/rebase", request);
+        }
 
     }
 }

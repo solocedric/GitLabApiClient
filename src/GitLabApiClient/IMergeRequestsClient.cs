@@ -112,5 +112,15 @@ namespace GitLabApiClient
         /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
         /// <param name="mergeRequestIid">The Internal Merge Request Id.</param>
         Task<IList<AwardEmoji>> GetAwardEmojisAsync(ProjectId projectId, int mergeRequestIid);
+
+
+        /// <summary>
+        /// Rebase.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <param name="mergeRequestId">The Internal Merge Request Id.</param>
+        /// <param name="request">Accept and Rebase Merge Request note request.</param>
+        Task AcceptAndRebaseAsync(ProjectId projectId, int mergeRequestId, AcceptMergeRequest request);
+        
     }
 }
